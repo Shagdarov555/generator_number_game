@@ -20,7 +20,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
       } else {
         emit(GameInitial());
         _remainingAttempts -= 1;
-        print("progress count is: ${_remainingAttempts}");
+        
         if (_remainingAttempts > 0) {
           emit(GameInProgress(_remainingAttempts));
         } else {

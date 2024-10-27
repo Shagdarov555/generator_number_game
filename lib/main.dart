@@ -5,10 +5,12 @@ import 'bloc/game_bloc.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(GuessNumberGameApp());
+  runApp(const GuessNumberGameApp());
 }
 
 class GuessNumberGameApp extends StatelessWidget {
+  const GuessNumberGameApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

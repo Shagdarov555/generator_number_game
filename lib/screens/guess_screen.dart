@@ -8,6 +8,8 @@ import 'result_screen.dart';
 class GuessScreen extends StatelessWidget {
   final TextEditingController guessController = TextEditingController();
 
+  GuessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +17,6 @@ class GuessScreen extends StatelessWidget {
       body: BlocBuilder<GameBloc, GameState>(
         builder: (context, state) {
           if (state is GameInProgress) {
-            print("count: ${state.remainingAttempts}");
             return Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -37,13 +38,13 @@ class GuessScreen extends StatelessWidget {
                             guessController.clear();
                       }
                     },
-                    child: Text('Проверить'),
+                    child: const Text('Проверить'),
                   ),
                 ],
               ),
             );
           } else if (state is GameWon) {
-            return ResultScreen(
+            return const ResultScreen(
               message: 'Поздравляем! Вы угадали число!',
               color: Colors.green,
             );

@@ -7,7 +7,7 @@ class ResultScreen extends StatelessWidget {
   final String message;
   final Color color;
 
-  const ResultScreen({required this.message, required this.color});
+  const ResultScreen({super.key, required this.message, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +19,16 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               message,
-              style: TextStyle(fontSize: 24, color: Colors.white),
+              style: const TextStyle(fontSize: 24, color: Colors.white),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 BlocProvider.of<GameBloc>(context).add(GameReset());
                 Navigator.pop(context);
               },
-              child: Text('Начать игру заново'),
+              child: const Text('Начать игру заново'),
             ),
           ],
         ),

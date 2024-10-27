@@ -8,25 +8,27 @@ class HomeScreen extends StatelessWidget {
   final TextEditingController nController = TextEditingController();
   final TextEditingController mController = TextEditingController();
 
+  HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Начните игру')),
+      appBar: AppBar(title: const Text('Начните игру')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: nController,
-              decoration: InputDecoration(labelText: 'Введите диапазон (n)'),
+              decoration: const InputDecoration(labelText: 'Введите диапазон (n)'),
               keyboardType: TextInputType.number,
             ),
             TextField(
               controller: mController,
-              decoration: InputDecoration(labelText: 'Введите попытки (m)'),
+              decoration: const InputDecoration(labelText: 'Введите попытки (m)'),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 final n = int.tryParse(nController.text);
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 }
               },
-              child: Text('Начать игру'),
+              child: const Text('Начать игру'),
             ),
           ],
         ),
